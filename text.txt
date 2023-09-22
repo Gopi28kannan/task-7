@@ -1,0 +1,22 @@
+Check if the File Exists Before Opening: You can first check if the file exists using 
+the os.path.exists() function from the os module. If the file doesn't exist, then you 
+can create it.
+
+import os
+
+filename = "New.txt"
+if not os.path.exists(filename):
+    f = open(filename, "x")
+    f.close()
+else:
+    print(f"The file '{filename}' already exists.")
+Use "w" Mode Instead of "x": If you want to create the file regardless of whether it
+exists or not, you can use the "w" mode instead of the "x" mode. The "w" mode will 
+create the file if it doesn't exist and truncate (clear) it if it does.
+
+f = open("New.txt", "w") f.close() 
+Remember to always close the file using the .close() method after you're done working 
+with it to free up system resources.
+
+In either case, after you've created or opened the file, you can proceed to read from 
+or write to it as needed.
